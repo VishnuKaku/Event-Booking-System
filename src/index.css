@@ -1,0 +1,137 @@
+/* src/index.css */
+
+/* Tailwind Base, Components, and Utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+body {
+  @apply bg-white text-gray-900 font-sans;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Container for the main content */
+#root {
+  @apply max-w-4xl mx-auto p-4;
+}
+
+/* Custom Styles for Event Header */
+.event-header {
+  @apply text-3xl font-bold text-gray-800 mb-6 text-center;
+}
+
+/* Button Styles for Consistency */
+.btn {
+  @apply px-4 py-2 rounded transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400;
+}
+
+.btn-warning {
+  @apply bg-yellow-500 text-white hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400;
+}
+
+.btn-neutral {
+  @apply bg-gray-500 text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400;
+}
+
+/* List Styles for Bookings and Waiting List */
+.booking-list, .waiting-list {
+  @apply list-none p-0;
+}
+
+.booking-item {
+  @apply flex justify-between items-center py-2 border-b border-gray-200;
+}
+
+.booking-item span {
+  @apply text-gray-700;
+}
+
+.cancel-btn {
+  @apply text-sm;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust layout for tablets and smaller screens */
+  #root {
+    @apply max-w-md p-2;
+  }
+
+  .event-header {
+    @apply text-2xl mb-4;
+  }
+
+  .btn {
+    @apply px-3 py-1 text-sm;
+  }
+
+  .booking-item {
+    @apply flex-col items-start gap-2;
+  }
+
+  .booking-item span {
+    @apply text-sm;
+  }
+
+  .cancel-btn {
+    @apply text-xs;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust layout for mobile screens */
+  #root {
+    @apply max-w-xs p-1;
+  }
+
+  .event-header {
+    @apply text-xl mb-3;
+  }
+
+  .btn {
+    @apply px-2 py-1 text-xs;
+  }
+
+  .booking-item {
+    @apply gap-1;
+  }
+
+  .booking-item span {
+    @apply text-xs;
+  }
+
+  .cancel-btn {
+    @apply text-xs px-2 py-0.5;
+  }
+}
+
+/* Hover Effects for Better Interactivity */
+.btn:hover {
+  @apply shadow-md;
+}
+
+.cancel-btn:hover {
+  @apply bg-red-700;
+}
+
+/* Focus States for Accessibility */
+.btn:focus {
+  @apply outline-none ring-2 ring-offset-2;
+}
+
+/* Error Message Styling (if needed for waiting list prompt) */
+.error-message {
+  @apply text-red-500 text-center mb-4 p-2 bg-red-100 rounded;
+}
